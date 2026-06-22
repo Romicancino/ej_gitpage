@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportaje de Datos | Proyecto Final</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="header-articulo">
+        <h1>Título principal de tu investigación</h1>
+        <p class="bajada">Un párrafo breve y conciso (estilo bajada periodística) que resuma el impacto o el hallazgo principal de los datos que vas a presentar.</p>
+        <p class="autor">Por [Tu Nombre]</p>
+    </header>
+
+    <main class="contenedor-principal">
+        
+        <section class="seccion-visual">
+            <h2>El contexto de la situación</h2>
+            <p>Aquí va tu redacción completa y lógica. Planteas la situación que conduce a la primera gran pregunta de tu investigación. La respuesta se visualiza a continuación.</p>
+            
+            <figure class="contenedor-grafico">
+                <figcaption>Gráfico 1: Descripción breve de lo que muestra el SVG.</figcaption>
+            </figure>
+
+            <p>El texto continúa, analizando el gráfico anterior y formulando una nueva interrogante que se responde con la segunda visualización estática.</p>
+            
+            <figure class="contenedor-grafico">
+                <figcaption>Gráfico 2: Descripción breve del segundo SVG.</figcaption>
+            </figure>
+        </section>
+
+        <hr> <section class="seccion-visual">
+            <h2>Profundizando en las variables</h2>
+            <p>Texto introductorio para tus gráficos interactivos. Aquí los datos requieren que el usuario pueda hacer hover o ver tooltips.</p>
+            
+            <figure class="contenedor-grafico">
+                <canvas id="miGrafico1"></canvas>
+                <figcaption>Gráfico 3: Visualización generada con Chart.js.</figcaption>
+            </figure>
+
+            <p>Más redacción conducente al cuarto gráfico de tu reportaje.</p>
+
+            <figure class="contenedor-grafico">
+                <canvas id="miGrafico2"></canvas>
+                <figcaption>Gráfico 4: Segunda visualización generada con Chart.js.</figcaption>
+            </figure>
+        </section>
+
+        <hr>
+
+        <section class="seccion-visual interactiva">
+            <h2>Explora los datos en detalle</h2>
+            <p>Utiliza el buscador a continuación para filtrar la base de datos y encontrar información específica sobre [tu tema].</p>
+            
+            <div class="contenedor-buscador">
+                <input type="text" id="inputBuscador" placeholder="Ej: Escribe un país, año o categoría...">
+            </div>
+
+            <div class="contenedor-tabla">
+                <table id="tablaDatos">
+                    <thead>
+                        <tr>
+                            <th>Categoría / Nombre</th>
+                            <th>Valor 1</th>
+                            <th>Valor 2</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoTabla">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
