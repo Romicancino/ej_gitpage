@@ -1,0 +1,136 @@
+/* --- Variables y Reset --- */
+:root {
+    --color-fondo: #ffffff;
+    --color-texto: #333333;
+    --color-texto-secundario: #666666;
+    --color-borde: #e2e2e2;
+    --color-acento: #005689; /* Azul periodístico sutil */
+    --fuente-principal: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+/* --- Estructura del artículo --- */
+.header-articulo, .contenedor-principal {
+    max-width: 800px; /* Ancho máximo para lectura cómoda */
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.header-articulo {
+    border-bottom: 2px solid var(--color-texto);
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.bajada {
+    font-size: 1.25rem;
+    color: var(--color-texto-secundario);
+    margin-bottom: 1rem;
+}
+
+.autor {
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin: 2rem 0 1rem 0;
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--color-borde);
+    margin: 3rem 0;
+}
+
+/* --- Visualizaciones --- */
+.contenedor-grafico {
+    margin: 2.5rem 0;
+}
+
+figcaption {
+    font-size: 0.85rem;
+    color: var(--color-texto-secundario);
+    margin-top: 0.5rem;
+    border-left: 3px solid var(--color-borde);
+    padding-left: 10px;
+}
+
+/* Para que los SVGs y Canvas sean responsivos */
+.contenedor-grafico svg, 
+.contenedor-grafico canvas {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 500px;
+}
+
+/* --- Buscador y Tabla --- */
+.contenedor-buscador {
+    margin-bottom: 1.5rem;
+}
+
+#inputBuscador {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 4px;
+}
+
+#inputBuscador:focus {
+    outline: none;
+    border-color: var(--color-acento);
+}
+
+.contenedor-tabla {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+th {
+    font-weight: bold;
+    color: var(--color-texto-secundario);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+/* Ocultar filas de la tabla cuando filtran */
+.oculto {
+    display: none;
+}
