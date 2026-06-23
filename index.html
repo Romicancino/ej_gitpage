@@ -3,76 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reportaje de Datos | Proyecto Final</title>
+    <title>Reportaje de Datos | Inspiración Reuters</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <header class="header-articulo">
-        <h1>Título principal de tu investigación</h1>
-        <p class="bajada">Un párrafo breve y conciso (estilo bajada periodística) que resuma el impacto o el hallazgo principal de los datos que vas a presentar.</p>
-        <p class="autor">Por [Tu Nombre]</p>
-    </header>
+    <nav class="reuters-nav">
+        <div class="nav-logo">
+            <span class="logo-circle"></span> Reuters
+        </div>
+        <ul class="nav-links">
+            <li>World ˅</li>
+            <li>Business ˅</li>
+            <li>Markets ˅</li>
+            <li>Sustainability ˅</li>
+            <li>More ˅</li>
+        </ul>
+        <div class="nav-actions">
+            <span class="search-icon">🔍</span>
+            <button class="btn-signin">Sign In</button>
+            <button class="btn-subscribe">Subscribe</button>
+        </div>
+    </nav>
 
     <main class="contenedor-principal">
         
+        <header class="header-articulo">
+            <h1>Título de tu investigación final</h1>
+            <p class="bajada">Un párrafo introductorio claro y directo. Explicando el fenómeno que vas a analizar y cómo los datos nos ayudarán a entenderlo.</p>
+            <p class="meta-datos">Data Analytics • Diciembre 2023</p>
+        </header>
+
+        <hr class="divisor-fino">
+
         <section class="seccion-visual">
-            <h2>El contexto de la situación</h2>
-            <p>Aquí va tu redacción completa y lógica. Planteas la situación que conduce a la primera gran pregunta de tu investigación. La respuesta se visualiza a continuación.</p>
+            <div class="texto-columna">
+                <p>Aquí va tu redacción inicial. Explicas el contexto y formulas la primera pregunta que da pie a tu visualización de RawGraphs.</p>
+            </div>
             
             <figure class="contenedor-grafico">
-                <figcaption>Gráfico 1: Descripción breve de lo que muestra el SVG.</figcaption>
+                <div class="placeholder-grafico">Aquí va tu SVG de RawGraphs</div>
+                <figcaption><strong>Figura 1.</strong> Descripción de lo que muestra el primer SVG.</figcaption>
             </figure>
 
-            <p>El texto continúa, analizando el gráfico anterior y formulando una nueva interrogante que se responde con la segunda visualización estática.</p>
-            
+            <div class="texto-columna">
+                <p>El análisis continúa. Redactas la transición lógica hacia la siguiente interrogante que se resuelve con el segundo gráfico.</p>
+            </div>
+
             <figure class="contenedor-grafico">
-                <figcaption>Gráfico 2: Descripción breve del segundo SVG.</figcaption>
+                <!-- SVG 2 -->
+                <div class="placeholder-grafico">Aquí va tu segundo SVG de RawGraphs</div>
+                <figcaption><strong>Figura 2.</strong> Explicación de la segunda visualización estática.</figcaption>
             </figure>
         </section>
 
-        <hr> <section class="seccion-visual">
-            <h2>Profundizando en las variables</h2>
-            <p>Texto introductorio para tus gráficos interactivos. Aquí los datos requieren que el usuario pueda hacer hover o ver tooltips.</p>
+        <hr class="divisor-fino">
+
+        <section class="seccion-visual">
+            <h2 class="subtitulo-reuters">Profundizando en los datos</h2>
+            <div class="texto-columna">
+                <p>Texto introductorio para las variables dinámicas de Chart.js.</p>
+            </div>
             
             <figure class="contenedor-grafico">
                 <canvas id="miGrafico1"></canvas>
-                <figcaption>Gráfico 3: Visualización generada con Chart.js.</figcaption>
             </figure>
-
-            <p>Más redacción conducente al cuarto gráfico de tu reportaje.</p>
 
             <figure class="contenedor-grafico">
                 <canvas id="miGrafico2"></canvas>
-                <figcaption>Gráfico 4: Segunda visualización generada con Chart.js.</figcaption>
             </figure>
         </section>
 
-        <hr>
+        <hr class="divisor-fino">
 
         <section class="seccion-visual interactiva">
-            <h2>Explora los datos en detalle</h2>
-            <p>Utiliza el buscador a continuación para filtrar la base de datos y encontrar información específica sobre [tu tema].</p>
+            <h2 class="subtitulo-reuters">Explorador de Datos</h2>
+            <div class="texto-columna">
+                <p>Busca términos específicos para filtrar la tabla en tiempo real.</p>
+            </div>
             
             <div class="contenedor-buscador">
-                <input type="text" id="inputBuscador" placeholder="Ej: Escribe un país, año o categoría...">
+                <input type="text" id="inputBuscador" placeholder="Buscar en la base de datos...">
             </div>
 
             <div class="contenedor-tabla">
                 <table id="tablaDatos">
                     <thead>
                         <tr>
-                            <th>Categoría / Nombre</th>
-                            <th>Valor 1</th>
-                            <th>Valor 2</th>
+                            <th>Entidad</th>
+                            <th>Variable A</th>
+                            <th>Variable B</th>
                         </tr>
                     </thead>
                     <tbody id="cuerpoTabla">
-                        </tbody>
+                    </tbody>
                 </table>
             </div>
         </section>
-
+        
+        <div class="footer-btn-container">
+            <button class="btn-load-more">Load More Articles</button>
+        </div>
     </main>
 
     <script src="script.js"></script>
