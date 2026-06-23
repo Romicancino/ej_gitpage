@@ -1,111 +1,510 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reportaje de Datos | Inspiración Reuters</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body>
-    <nav class="reuters-nav">
-        <div class="nav-logo">
-            <span class="logo-circle"></span> Reuters
-        </div>
-        <ul class="nav-links">
-            <li>World ˅</li>
-            <li>Business ˅</li>
-            <li>Markets ˅</li>
-            <li>Sustainability ˅</li>
-            <li>More ˅</li>
-        </ul>
-        <div class="nav-actions">
-            <span class="search-icon">🔍</span>
-            <button class="btn-signin">Sign In</button>
-            <button class="btn-subscribe">Subscribe</button>
-        </div>
-    </nav>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Electivos Diseño</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100..900;1,100..900&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"/>
+      
+        <style>
+            /*
+                Lo que sigue está "inspirado" en un trabajo de Reuters Graphics:
+                https://www.reuters.com/graphics/IRAN-CRISIS/OIL-CONSUMERS/akpeyynmypr/
+            */
 
-    <main class="contenedor-principal">
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            :root {
+                /* Colores */
+                --bg: #fefefe;
+                --color-text: rgb(64, 64, 64);
+                --color-muted: rgb(102, 102, 102);
+                --accent: #e8571a;
+                --border: silver;
+                /* Tipografía */
+                --serif:  "Spectral", serif;
+                --sans:   "Georama", sans-serif;
+            }
+
+            body {
+                background: var(--bg);
+                font-family: var(--serif);
+                color: var(--color-text);
+                font-size: 1.25rem;
+                line-height: 1.5;
+                -webkit-font-smoothing: antialiased;
+            }
+
+            /* ── Barra de navegación y pie ── */
+            nav,
+            footer {
+                border-color: var(--border);
+                border-style: solid;
+                font-family: var(--sans);
+                font-size: calc(0.5rem + 0.5vw + 0.5vh);
+                font-weight: 700;
+            }
+
+            nav { border-width: 0 0 1px; margin-bottom:4.5vh;}
+            footer { border-width: 1px 0 0; margin-top: 10vh; }
+
+            nav > div,
+            footer > div {
+                width: 90%;
+                max-width: 980px;
+                margin: 0 auto;
+                padding: calc(0.6rem + 0.4vw) 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            nav div span:first-child {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                letter-spacing: 0.05vw;
+            }
+
+            footer div {
+                letter-spacing: 0.05vw;
+                font-size:0.8rem;
+            }
+
+            /* ── Estilos de enlace ── */
+            a {
+                color: var(--color-text);
+                text-decoration: underline;
+                text-underline-offset: 2px;
+                text-decoration-thickness: 1px;
+                text-decoration-style: dotted;
+            }
+
+            a:hover {
+                text-decoration: none;
+                color: black;
+            }
+
+            /* ── Cabecera ── */
+            header {
+                width: 95%;
+                max-width: 42rem;
+                margin: 0 auto;
+                padding: 0 1rem;
+                text-align: center;
+                font-family: var(--sans);
+            }
+
+            header img {
+                width: calc(100% + 2rem);
+                height: auto;
+                margin: 0 -1rem;
+            }
+
+            header a {
+                text-decoration: none;
+            }
+
+            header a:hover {
+                text-decoration: underline;
+                text-underline-offset: 2px;
+                text-decoration-thickness: 1px;
+                text-decoration-style: dotted;
+            }
+
+            /* ── Metadatos de la cabecera ── */
+            address,
+            time {
+                font-size: 0.875rem;
+                font-weight: 400;
+                font-style: normal;
+                line-height: 1;
+                color: var(--color-muted);
+            }
+
+            address {
+                margin-top: 2.5rem;
+            }
+
+            address a {
+                font-weight: 600;
+            }
+
+            time {
+                margin: 0.5rem 0 2.5rem;
+                display: block;
+            }
+
+            /* ── Artículo ── */
+            main {
+                width: 95%;
+                max-width: 42rem;
+                margin: 0 auto;
+                padding: 0 1.5rem;
+            }
+
+            /* ── Jerarquía tipográfica ── */
+            h1 {
+                font-weight: 700;
+                font-size: calc(1.75rem + 0.25vh + 0.5vw);
+                letter-spacing: 0.05rem;
+                line-height: 1;
+                margin: 0.6rem 0 0.3rem 0;
+                color: var(--color-text);
+            }
+
+            h2 {
+                font-size: calc(0.8rem + 0.2vh + 0.4vw);
+                font-weight: 300;
+                letter-spacing: 0.025rem;
+                line-height: 1.4;
+                color: var(--color-text);
+            }
+
+            h3 {
+                font-size: 0.875rem;
+                font-weight: 700;
+                color: var(--color-muted);
+                text-transform: uppercase;
+                letter-spacing: 0.1rem;
+            }
+
+            h4, h5 {
+                font-family: var(--sans);
+                font-weight: 700;
+                color: var(--color-text);
+                letter-spacing: 0.05rem;
+                line-height: 1.3;
+            }
+
+            h4 { margin: 2rem 0 0; font-size: calc(0.825rem + 0.25vh + 0.25vw); }
+            h5 { margin: 4rem 0 0; font-size: calc(0.65rem + 0.25vh + 0.25vw); }
+
+            /* ── Cuerpo del texto ── */
+            p {
+                font-family: var(--serif);
+                color: var(--color-text);
+                margin: 1.2rem 0;
+            }
+
+            p small {
+                font-weight: 500;
+            }
+
+            em {
+                font-weight: 600;
+                font-style: normal;
+            }
+
+            h4 + p { margin: 0.6rem 0 1.2rem; }
+            h5 + p { font-family: var(--sans); font-size:0.8rem; margin: 0.3rem 0 1.2rem; }
+
+            ul {
+                margin: 0 0 1.1rem;
+                padding: 0;
+                list-style: none;
+                font-size: 90%;
+            }
+
+            ul li {
+                margin-bottom: 0.25rem;
+                padding-left: 1.25rem;
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/></svg>');
+                background-repeat: no-repeat;
+                background-size: 1rem 1rem;
+                background-position-y: center;
+            }
+
+            /* ── Figura que contiene el gráfico ── */
+            figure {
+                margin: 2rem -1.5rem;
+                background: white;
+                padding: 1.5rem;
+                border: 2px solid #eee;
+                border-radius: 4px;
+            }
+
+            figure figcaption {
+                font-family: var(--sans);
+                color: var(--color-muted);
+                font-size: 0.8rem;
+                font-weight: 300;
+                line-height: 1.4;
+                margin-top: 1rem;
+                padding-top: 0.75rem;
+                letter-spacing: 0.1rem;
+            }
+
+            /* ── NUEVOS ESTILOS: Buscador y Tabla estilo Reuters ── */
+            .seccion-buscador {
+                margin: 3rem 0;
+            }
+
+            .input-contenedor {
+                position: relative;
+                margin-bottom: 1.5rem;
+            }
+
+            .input-buscador {
+                width: 100%;
+                padding: 12px 16px;
+                font-family: var(--sans);
+                font-size: 1rem;
+                border: 1px solid var(--border);
+                border-radius: 2px;
+                outline: none;
+                transition: border-color 0.2s;
+            }
+
+            .input-buscador:focus {
+                border-color: var(--color-text);
+            }
+
+            .tabla-reuters {
+                width: 100%;
+                border-collapse: collapse;
+                font-family: var(--sans);
+                font-size: 0.95rem;
+                margin-top: 1rem;
+            }
+
+            .tabla-reuters th {
+                text-align: left;
+                padding: 10px;
+                border-bottom: 2px solid var(--color-text);
+                color: var(--color-muted);
+                font-weight: 700;
+                text-transform: uppercase;
+                font-size: 0.8rem;
+                letter-spacing: 0.05rem;
+            }
+
+            .tabla-reuters td {
+                padding: 12px 10px;
+                border-bottom: 1px solid #eee;
+                color: var(--color-text);
+            }
+
+            .tabla-reuters tr:hover {
+                background-color: #fcfcfc;
+            }
+
+            .sin-resultados {
+                padding: 20px text-align center;
+                color: var(--color-muted);
+                font-family: var(--sans);
+                font-size: 0.95rem;
+            }
+        </style>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <nav>
+            <div>
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 32 32" fill="#861d1d"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><style type="text/css">.sharpcorners_een{fill:#fb7474;}</style><g><g><rect x="9" y="1" class="sharpcorners_een" width="13" height="2"></rect><path class="sharpcorners_een" d="M24.598,12.998C22.318,11.098,21,8.284,21,5.316V4H10v1.316c0,2.968-1.318,5.782-3.598,7.682 L4,15l11,16V19.95c-1.141-0.232-2-1.24-2-2.45c0-1.381,1.119-2.5,2.5-2.5s2.5,1.119,2.5,2.5c0,1.209-0.859,2.218-2,2.45V31l11-16 L24.598,12.998z"></path></g></g></g></svg>
+                    InDisV
+                </span>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                </svg>
+            </div>
+        </nav>
         
-        <header class="header-articulo">
-            <h1>Título de tu investigación final</h1>
-            <p class="bajada">Un párrafo introductorio claro y directo. Explicando el fenómeno que vas a analizar y cómo los datos nos ayudarán a entenderlo.</p>
-            <p class="meta-datos">Data Analytics • Diciembre 2023</p>
+        <header>
+            <img src="portada.jpg" alt="Portada electivos" width="1375" height="768" /> 
+            <h3>DISEÑO EN CHILE</h3>
+            <h1>Electivos Perdidos de Diseño</h1>
+            <h2>Electivos de la mención Visualidad y Medios de la Universidad de Chile</h2>
+            <address>Por <a href="#">Valentina Alcota,</a> <a href="#">Romina Cancino,</a> <a href="#">Gastón Meneses</a> y <a href="#">Felipe Cortez</a></address>
+            <time>Publicado el 23 de Junio, 2026 06:00 p.m. GMT-4</time>
         </header>
 
-        <hr class="divisor-fino">
+        <main id="contenedor">
+            <p>En la Facultad de Arquitectura y Urbanismo de la Universidad de Chile, se imparte la carrera de Diseño, la cual, a partir del tercer año, los estudiantes pueden elegir la mención y el camino que van a tomar para consolidar su carrera y egresarse respectivamente. Los estudiantes pueden optar por:</p>
+            <ul>
+                <li><em>Título profesional de Diseñador(a) Industrial:</em> Mención Industrial y Servicios.</li>
+                <li><em>Título profesional de Diseñador(a) Gráfico(a):</em> Mención en Visualidad y Medios.</li>
+            </ul>
+            <p>Para esto, por ende, se ha creado una malla curricular que se basa un plan de estudios recientemente innovado, de manera de asegurar su pertinencia con los tiempos actuales marcados por la globalización, el desarrollo tecnológico y la protección ambiental. Esta situación, que ha abierto nuevas áreas de desempeño profesional para los diseñadores, también obliga a un perfeccionamiento continuo donde el aprender a aprender adquiere un carácter relevante. (Universidad de Chile, 2026.)<span class="author-sup">1</span></p>
 
-        <section class="seccion-visual">
-            <div class="texto-columna">
-                <p>Aquí va tu redacción inicial. Explicas el contexto y formulas la primera pregunta que da pie a tu visualización de RawGraphs.</p>
-            </div>
+            <p>Dicha <a href="https://drive.google.com/file/d/1kC9xYUbKkL99kAaEN-HOufKv01lqKgTC/view?usp=sharing" target="_blank">malla curricular</a> establece y permite que los estudiantes opten por ramos electivos, los cuales, como lo dice su propio nombre, pueden ser elegidos a preferencia y deseo del estudiante, dependiendo qué es lo que cree que le convendrá de mejor manera a su formación profesional y los horarios disponibles. Estos electivos, según la información actualizada, detallada y proporcionada por el CEDIS (Centro de Estudiantes de Diseño) deben ser repartidos de la siguiente manera:</p>
+          
+            <p>Dada dicha información acerca de las condiciones y posibilidades que los estudiantes poseen para elegir sus respectivos electivos, podemos desarrollar las siguientes interrogantes, considerando un rango de tiempo entre los años 20xx y 2xx:</p>
+            <ul>
+                <li><em>Pregunta 1:</em> xxx </li>
+                <li><em>Pregunta 2:</em> xxx </li>
+                <li><em>Pregunta 3:</em> xxx </li>    
+            </ul>            
             
-            <figure class="contenedor-grafico">
-                <div class="placeholder-grafico">Aquí va tu SVG de RawGraphs</div>
-                <figcaption><strong>Figura 1.</strong> Descripción de lo que muestra el primer SVG.</figcaption>
-            </figure>
-
-            <div class="texto-columna">
-                <p>El análisis continúa. Redactas la transición lógica hacia la siguiente interrogante que se resuelve con el segundo gráfico.</p>
-            </div>
-
-            <figure class="contenedor-grafico">
-                <!-- SVG 2 -->
-                <div class="placeholder-grafico">Aquí va tu segundo SVG de RawGraphs</div>
-                <figcaption><strong>Figura 2.</strong> Explicación de la segunda visualización estática.</figcaption>
-            </figure>
-        </section>
-
-        <hr class="divisor-fino">
-
-        <section class="seccion-visual">
-            <h2 class="subtitulo-reuters">Profundizando en los datos</h2>
-            <div class="texto-columna">
-                <p>Texto introductorio para las variables dinámicas de Chart.js.</p>
-            </div>
+            <p>En los siguientes gráficos podemos obtener las respuestas:</p>
             
-            <figure class="contenedor-grafico">
-                <canvas id="miGrafico1"></canvas>
+            <figure>
+                <div style="width: 100%; max-width: 800px; margin: 0 auto;">
+                    <canvas id="graficoBarras"></canvas>
+                </div>
+                <figcaption>
+                    Gráfico con los 3 principales grupos de electivos en los últimos años, analizando el enfoque editorial versus otras disciplinas.
+                </figcaption>
             </figure>
 
-            <figure class="contenedor-grafico">
-                <canvas id="miGrafico2"></canvas>
-            </figure>
-        </section>
+            <section class="seccion-buscador">
+                <h4>Buscador Global de Electivos</h4>
+                <p>Introduce palabras clave (nombre del ramo, área o código) para consultar los requisitos de la base de datos oficial:</p>
+                
+                <div class="input-contenedor">
+                    <input type="text" id="inputBuscador" class="input-buscador" placeholder="Ej: Semiótica, Editorial, Narrativas...">
+                </div>
 
-        <hr class="divisor-fino">
-
-        <section class="seccion-visual interactiva">
-            <h2 class="subtitulo-reuters">Explorador de Datos</h2>
-            <div class="texto-columna">
-                <p>Busca términos específicos para filtrar la tabla en tiempo real.</p>
-            </div>
-            
-            <div class="contenedor-buscador">
-                <input type="text" id="inputBuscador" placeholder="Buscar en la base de datos...">
-            </div>
-
-            <div class="contenedor-tabla">
-                <table id="tablaDatos">
+                <table class="tabla-reuters" id="tablaElectivos">
                     <thead>
                         <tr>
-                            <th>Entidad</th>
-                            <th>Variable A</th>
-                            <th>Variable B</th>
+                            <th>Asignatura</th>
+                            <th>Mención / Área</th>
+                            <th>Carácter</th>
                         </tr>
                     </thead>
                     <tbody id="cuerpoTabla">
-                    </tbody>
+                        </tbody>
                 </table>
-            </div>
-        </section>
-        
-        <div class="footer-btn-container">
-            <button class="btn-load-more">Load More Articles</button>
-        </div>
-    </main>
+                <div id="sinResultados" class="sin-resultados" style="display: none;">No se encontraron electivos que coincidan con la búsqueda.</div>
+            </section>
 
-    <script src="script.js"></script>
-</body>
+            <p>Para visualizar patrones en estructuras complejas, los <a href="https://datavizcatalogue.com/ES/metodos/diagrama_de_dispersion.html" target="_blank">diagramas de distribución</a> resultan idóneos. Al proyectar una colección de puntos mediante coordenadas cartesianas, el cruce de las variables en los ejes horizontal y vertical permite detectar la presencia y fuerza de una correlación entre ambas.</p>
+
+            <p>Al trazar una línea de mejor ajuste entre el programa de menor costo y acreditación básica (Diseño de Interiores y Ambientes en la <small>UNIACC</small>) hasta la opción de mayor costo y acreditación (Diseño en la <small>PUC</small>), se observa una pendiente ascendente en la distribución de los puntos. Si bien esto sugiere una correlación positiva, donde un mayor número de años de acreditación tiende a coincidir con aranceles más altos, la fuerza de correlación de débil y los valores atípicos son varios.</p>
+
+            <h4>El siguiente paso le corresponde a usted</h4>
+
+            <p><em>Un subtítulo presenta una pregunta que se responde con una visualización de datos</em>. A continuación, se explica la pertinencia de tal visualización, con apoyo en el <a href="https://datavizcatalogue.com/ES/index.html" target="_blank">Catálogo de Visualización de Datos</a> o la <a href="https://www.visual-literacy.org/periodic_table/periodic_table.html" target="_blank">Tabla Periódica de Métodos de Visualización</a>, que debe estar vinculado. Y se cierra con un comentario para la respuesta visualizada.</p>
+
+            <h5>Fuentes</h5>
+            <p>Universidad de Chile (2026); Centro de Estudiantes de Diseño (CEDIS).</p>
+        </main>
+
+        <footer>
+            <div>
+                <a href="https://www.reuters.com/graphics/IRAN-CRISIS/OIL-CONSUMERS/akpeyynmypr/" target="_blank">Inspirado en Reuters</a>
+                <a href="https://github.com/profesorfaco/troncal">Diseño y visualización de información</a>
+            </div>
+        </footer>
+    
+        <script>
+            // 1. BASE DE DATOS EXPORTADA DE TU EXCEL
+            // Solo debes reemplazar o rellenar este arreglo con las filas de tu Excel.
+            const baseDeDatosExcel = [
+                { asignatura: 'Percepción y Semiótica', area: 'Visualidad y Medios', caracter: 'Teórico' },
+                { asignatura: 'Curaduría y Narrativas Visuales', area: 'Visualidad y Medios', caracter: 'Teórico-Práctico' },
+                { asignatura: 'Experimentación Editorial', area: 'Enfoque Editorial', caracter: 'Taller' },
+                { asignatura: 'Tipografía Avanzada', area: 'Enfoque Editorial', caracter: 'Taller' },
+                { asignatura: 'Diseño de Interfaces de Usuario', area: 'Otras Disciplinas', caracter: 'Práctico' },
+                { asignatura: 'Cultura Gráfica Contemporánea', area: 'Otras Disciplinas', caracter: 'Teórico' }
+            ];
+
+            // 2. CONFIGURACIÓN DEL GRÁFICO DE BARRAS
+            const dataGrafico = {
+                labels: ['Percepción y Semiótica', 'Curaduría y Narrativas', 'Experimentación y Crítica'],
+                datasets: [
+                    {
+                        label: 'Enfoque Editorial / Tipográfico',
+                        data: [2, 3, 0], 
+                        backgroundColor: '#54060E', 
+                        borderWidth: 0
+                    },
+                    {
+                        label: 'Otras Disciplinas',
+                        data: [4, 3, 6], 
+                        backgroundColor: '#FFC6CC', 
+                        borderWidth: 0
+                    }
+                ]
+            };
+
+            const configGrafico = {
+                type: 'bar',
+                data: dataGrafico,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: '¿Visualidad y Medios es igual a Diseño Editorial?',
+                            font: {
+                                size: 16,
+                                family: "'Helvetica Neue', 'Arial', sans-serif",
+                                weight: 'bold'
+                            },
+                            padding: { top: 10, bottom: 20 }
+                        },
+                        tooltip: { mode: 'index', intersect: false }
+                    },
+                    scales: {
+                        x: { stacked: true, grid: { display: false } },
+                        y: { 
+                            stacked: true, 
+                            title: { display: true, text: 'Cantidad de Electivos Totales' },
+                            ticks: { stepSize: 1 }
+                        }
+                    }
+                }
+            };
+
+            // 3. LÓGICA DE FILTRADO Y RENDERIZADO DEL BUSCADOR
+            const inputBuscador = document.getElementById('inputBuscador');
+            const cuerpoTabla = document.getElementById('cuerpoTabla');
+            const sinResultados = document.getElementById('sinResultados');
+
+            function renderizarTabla(datos) {
+                cuerpoTabla.innerHTML = '';
+                
+                if (datos.length === 0) {
+                    sinResultados.style.display = 'block';
+                    return;
+                }
+                
+                sinResultados.style.display = 'none';
+                datos.forEach(item => {
+                    const fila = document.createElement('tr');
+                    fila.innerHTML = `
+                        <td><strong>${item.asignatura}</strong></td>
+                        <td>${item.area}</td>
+                        <td>${item.caracter}</td>
+                    `;
+                    cuerpoTabla.appendChild(fila);
+                });
+            }
+
+            // Evento para escuchar lo que escribe el usuario en tiempo real
+            inputBuscador.addEventListener('input', (e) => {
+                const terminoBusqueda = e.target.value.toLowerCase();
+                
+                const datosFiltrados = baseDeDatosExcel.filter(item => {
+                    return item.asignatura.toLowerCase().includes(terminoBusqueda) || 
+                           item.area.toLowerCase().includes(terminoBusqueda) ||
+                           item.caracter.toLowerCase().includes(terminoBusqueda);
+                });
+                
+                renderizarTabla(datosFiltrados);
+            });
+
+            // 4. INICIALIZACIÓN GENERAL AL CARGAR LA PÁGINA
+            window.onload = function() {
+                // Cargar gráfico
+                const ctx = document.getElementById('graficoBarras').getContext('2d');
+                new Chart(ctx, configGrafico);
+                
+                // Mostrar tabla completa inicialmente
+                renderizarTabla(baseDeDatosExcel);
+            };
+        </script>
+    </body>
 </html>
